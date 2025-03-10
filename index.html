@@ -27,6 +27,12 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script type="text/javascript" async
+  src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 
 <body>
@@ -229,7 +235,7 @@
 
         <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
-            <img src="./static/images/method_v07.pdf"
+            <img src="./static/images/method_v07.jpg"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
             <!-- <p>Start Frame</p> -->
@@ -255,8 +261,8 @@
             Overview of <b>IMPACT</b>. There is a toy bear, a coffee cup and a tomato can on the table. 
             The objective is to reach the tomato can. 
             We use SAM2 to segment the image and label the objects using "1", "2", and "3" to assist GPT's visual reasoning. 
-            GPT also receives a language template prompt with object information from SAM2. 
-            GPT produces <i>costs</i> for the three objects, which are projected into a voxel grid indicating the cost for the robot end-effector to enter each voxel.
+            GPT also receives a language template prompt \( \ell \) with object information from SAM2. 
+            GPT produces <b><i>costs</i></b> for the three objects, which are projected into a voxel grid \( C \) indicating the cost for the robot end-effector to enter each voxel.
             The costs are high for the coffee cup (GPT-assigned cost: 8) and the tabletop (a fixed cost of 10). 
             We use a cost of -1 for the target object. 
             Finally, an off-the-shelf motion planner (RRT*) uses this to guide the robot, which avoids the coffee cup but makes contact with the toy bear to successfully reach the tomato can. 
