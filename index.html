@@ -201,7 +201,7 @@
             Due to this diversity, it is difficult to characterize which contacts may be acceptable or unacceptable. 
           </p>
           <p>
-            In this paper, we propose IMPACT, a novel motion planning framework that uses Vision-Language Models (VLMs) to infer environment semantics, identifying which parts of the environment can best tolerate contact based on object properties and locations. 
+            In this paper, we propose <b>IMPACT</b>, a novel motion planning framework that uses Vision-Language Models (VLMs) to infer environment semantics, identifying which parts of the environment can best tolerate contact based on object properties and locations. 
             Our approach uses the VLM's outputs to produce a dense 3D "cost map" that encodes contact tolerances and seamlessly integrates with standard motion planners. 
             We perform experiments using 20 simulation and 10 real-world scenes and assess using task success rate, object displacements, and feedback from human evaluators. 
             Our results over 3620 simulation and 200 real-world trials suggest that IMPACT enables efficient contact-rich motion planning in cluttered settings while outperforming alternative methods and ablations.
@@ -232,16 +232,12 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Method Overview</h2> 
-<!-- 
-        <div class=""> -->
-          <!-- <div class="column is-3 has-text-centered"> -->
+
         <div class="column has-text-centered">
           <img src="./static/images/method_v07.jpg"
-            class="centered-image"
-            alt="method"/>
-          <!-- <p>Start Frame</p> -->
+            class="centered-method"
+            alt="method">
         </div>
-        <!-- </div> -->
 
         <div class="content has-text-justified">
           <p>
@@ -256,10 +252,10 @@
           </p>
         </div>
         <br/> 
+        
 
     <!-- <div class="columns is-centered"> -->
 
-      <!-- Visual Effects. -->
       <!-- <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
@@ -273,9 +269,7 @@
           </video>
         </div>
       </div> -->
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
@@ -293,7 +287,56 @@
         </div>
       </div>
     </div> -->
-    <!--/ Matting. -->
+
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Full Prompt</h2> 
+        
+        <div class="code-container">
+          <button class="copy-button" onclick="copyCode()">Copy</button>
+          <pre class="code-block" id="codeBlock">
+            <code>
+              You are an advanced AI system designed to assist in robotic navigation within cluttered environments. 
+Your task is to evaluate the safety of various objects in a scene, considering not only the individual characteristics of each object but also their interactions and the physical principles that govern their stability and potential movement. 
+For each listed object, you will assign a safety score ranging from 0 to 10, where 0 indicates minimal risk of damage upon collision and 10 signifies a high risk of damage. 
+Your assessment should consider the object's material, size, context, and its relationship with surrounding objects, including any potential domino effects or other interaction-induced risks.
+
+Please provide a safety score for each object, taking into account the following:
+- Object Material and Structural Integrity: How fragile or sturdy the object is (e.g., glass vs. plastic vs. metal).
+- Stability and Likelihood of Movement: Whether the object is firmly placed or precariously balanced. For instance, a stable stack of books alone might be low risk, but if there is a fragile object on top, the risk increases significantly.
+- Potential Domino Effects or Chain Reactions: If collision with one object could cause it to roll, topple, or otherwise move into other objects, increasing the overall risk. For example, a ball might be low risk in isolation, but if it can roll and knock over a wine glass, the effective risk is higher.
+- Proximity and Arrangement: How close the object is to other fragile or easily toppled items. Even if an object (like a sugar box) is normally sturdy, being positioned next to a fragile wine glass can raise its overall risk score if it could collide or push the glass.
+- Any Other Relevant Physical Interactions: Any additional factors that might increase the risk of damage, such as height above the ground, shape of the surface, or presence of liquids.
+
+Each item is an object labelled in white with its respective ID number. Adhere to the specified format for your response, listing each object followed by its corresponding safety score. Do not include any additional text or output.
+
+Format Requirements:
+- The JSON object must be a single string.
+- Each key must be the object's ID number in parentheses (e.g., "1"), and each value must be the safety score (an integer between 0 and 10).
+- Do not include any text other than the JSON object in that final line. Do not add something like "```json" or "```".
+- Do not include newlines, extra punctuation, or object names in the JSON.
+- Every key/value should be strictly "ID": score.
+- No explanations or reasoning should appear in the final JSON—only the scores.
+
+Input objects:
+{object_list}
+Your analysis should be comprehensive, considering the dynamic interactions between objects and the physical principles that may affect the outcome of a collision.
+            </code>
+          </pre>
+      </div>
+  
+      <script>
+          function copyCode() {
+              let code = document.getElementById("codeBlock").innerText;
+              navigator.clipboard.writeText(code).then(() => {
+                  alert("Code copied to clipboard!");
+              }).catch(err => {
+                  console.error("Failed to copy: ", err);
+              });
+          }
+      </script>
 
 
 
