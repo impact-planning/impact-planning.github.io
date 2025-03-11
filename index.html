@@ -312,65 +312,42 @@
             <p id="target-object-text-sim">
               The target object is <strong>the foam brick</strong>.
             </p>
-            <br/>
-
-            <div class="dropdown-container">
-              <label><strong>Category</strong></label>
-              <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
-                <option value="impact">IMPACT</option>
-                <option value="collision_free">Collision Free</option>
-                <option value="-">-</option>
-              </select>
-
-              <label><strong>Path Planning Method</strong></label>
-              <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
-                <option value="rrt_star">RRT*</option>
-                <option value="rrt">RRT</option>
-                <option value="mpc">MPC</option>
-                <option value="lapp">LAPP</option>
-              </select>
-            </div>
-
-          </div>
-        </div>    
-        <br/>    
+            <br/>  
 
         <div class="columns is-centered">
           <!-- <div class="column is-6 has-text-centered"> -->
           <div class="columns is-centered is-vcentered">
-            <!-- <h3 class="title is-4">Baseline</h3> -->
+            <h3 class="title is-4">Baseline</h3>
 
-            <!-- <div class="dropdown-row">
+            <div class="dropdown-row">
               <div class="dropdown-container">
-                <label><strong>Category</strong></label>
-                <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
-                  <option value="impact">IMPACT</option>
-                  <option value="collision_free">Collision Free</option>
-                  <option value="-">-</option>
-                </select>
-
-                <label><strong>Path Planning Method</strong></label>
-                <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
-                  <option value="rrt_star">RRT*</option>
-                  <option value="rrt">RRT</option>
-                  <option value="mpc">MPC</option>
+                <label><strong>Method</strong></label>
+                <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()">
+                  <option value="impact-rrt">IMPACT+RRT</option>
+                  <option value="impact-mpc">IMPACT+MPC</option>
+                  <option value="collision_free-rrt_star">Collision-Free+RRT*</option>
+                  <option value="collision_free-rrt">Collision-Free+RRT</option>
+                  <option value="collision_free-mpc">Collision-Free+MPC</option>
                   <option value="lapp">LAPP</option>
                 </select>
+
               </div>
             </div>
-            <br/> -->
+            <br/>
 
-            <video id="video-sim-left" width="60%" controls muted>
+            <video id="video-sim-left" width="98%" controls muted>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
             </video>
+            <p id="no-path-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
           </div>
     
-          <!-- <div class="column is-6 has-text-centered">
+          <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
             <video id="video-sim-right" width="98%" controls muted>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
             </video>
-          </div> -->
+            <p id="no-path-right" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
+          </div>
         </div>
 
       </div>
@@ -470,24 +447,50 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
     <script>
       function updateVideosSim() {
           let scene = document.getElementById("scene-select-sim").value;
+          let method = document.getElementById("method-select-sim").value;
 
           fetch('./static/video_files.json')
-          .then(response => response.json())
-          .then(videoData => {
-            
-          })
-          .catch(error => console.error("Error loading video filenames:", error));
+            .then(response => response.json())
+            .then(videoData => {
+                if (videoData[scene]) {
+                    let baseFilename = videoData[scene]?.[method] || null;
+                    let oursFilename = videoData[scene]?.["impact-rrt_star"] || null;
+
+                    if (baseFilename) {
+                      document.getElementById("video-sim-left").src = `./static/videos/sim/${baseFilename}`;
+                      document.getElementById("video-sim-left").load();
+                      document.getElementById("video-sim-left").style.display = "block";
+                      document.getElementById("no-path-left").style.display = "none";
+                    } else {
+                      document.getElementById("video-sim-left").style.display = "none";
+                      document.getElementById("no-path-left").style.display = "block";
+                    }
+
+                    if (oursFilename) {
+                      document.getElementById("video-sim-right").src = `./static/videos/sim/${oursFilename}`;
+                      document.getElementById("video-sim-right").load();
+                      document.getElementById("video-sim-right").style.display = "block";
+                      document.getElementById("no-path-right").style.display = "none";
+                    } else {
+                      document.getElementById("video-sim-right").style.display = "none";
+                      document.getElementById("no-path-right").style.display = "block";
+                    }
+
+                } else {
+                    console.error("No matching video found for:", scene, method);
+                }
+            })
+            .catch(error => console.error("Error loading video filenames:", error));
 
           fetch('./static/target_objects.json')
             .then(response => response.json())
             .then(data => {
-                let targetText = data[scene] || ""; 
-                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+                let targetText = data[scene] || "an unknown object"; 
+                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
       }
     </script>
-
 
 
   </div>
