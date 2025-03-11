@@ -230,30 +230,39 @@ body {
 
 .scene-container {
   display: flex;
-  justify-content: start; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center; /* Centers elements horizontally */
+  align-items: center; /* Aligns items in the middle */
   gap: 20px; /* Space between dropdown and text */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; /* Ensures responsiveness */
+  width: 100%;
+  text-align: center; /* Ensures inner text is also centered */
 }
 
 
 .sim-video-container {
   display: flex;
-  align-items: flex-start; /* Ensures top alignment */
-  justify-content: center; /* Centers both columns */
-  gap: 20px; /* Adds space between left and right columns */
-  flex-wrap: wrap; /* Ensures responsiveness */
-  width: 100%; 
+  justify-content: center; /* Ensures videos are centered */
+  align-items: flex-start; /* Aligns both videos at the top */
+  gap: 20px; /* Adds space between left and right videos */
+  flex-wrap: wrap; /* Allows responsiveness */
+  width: 100%;
 }
 
 .sim-video-column {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures center alignment */
+  align-items: center; /* Centers dropdown, text, and video */
   justify-content: flex-start; /* Aligns videos at the top */
-  flex: 1; 
-  /* width: 49%;  */
-  max-width: 50%;  
+  flex: 1; /* Ensures equal width distribution */
+  max-width: 50%; /* Prevents one column from getting larger */
+  box-sizing: border-box; /* Ensures proper width calculation */
+  text-align: center; /* Centers the text above each video */
+}
+
+.sim-video-column video {
+  width: 100%; /* Ensures video scales within its column */
+  max-width: 600px; /* Prevents videos from growing too large */
+  height: auto; /* Keeps aspect ratio */
 }
 
 .sim-video-column h3, .dropdown-container {
@@ -265,14 +274,3 @@ body {
   margin-bottom: 10px; /* Space between dropdown and video */
 }
 
-.sim-video-column video {
-  width: 98%;
-  max-width: 600px; /* Prevents videos from growing too large */
-  height: auto; 
-}
-
-.sim-video-column p {
-  text-align: center;
-  font-weight: bold;
-  display: none; /* "No path found" is hidden by default */
-}

@@ -416,6 +416,14 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       function updateVideosReal() {
           let scene = document.getElementById("scene-select-real").value;
 
+          fetch('./static/target_objects.json')
+            .then(response => response.json())
+            .then(data => {
+                let targetText = data[scene] || ""; 
+                document.getElementById("target-object-text-real").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+            })
+            .catch(error => console.error("Error loading target object JSON:", error));
+
           fetch('./static/video_files.json')
           .then(response => response.json())
           .then(videoData => {
@@ -433,14 +441,6 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
               }
           })
           .catch(error => console.error("Error loading video filenames:", error));
-
-          fetch('./static/target_objects.json')
-            .then(response => response.json())
-            .then(data => {
-                let targetText = data[scene] || ""; 
-                document.getElementById("target-object-text-real").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
-            })
-            .catch(error => console.error("Error loading target object JSON:", error));
       }
     </script>
 
@@ -448,6 +448,14 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       function updateVideosSim() {
           let scene = document.getElementById("scene-select-sim");
           let method = document.getElementById("method-select-sim").value;
+
+          fetch('./static/target_objects.json')
+            .then(response => response.json())
+            .then(data => {
+                let targetText = data[scene] || ""; 
+                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+            })
+            .catch(error => console.error("Error loading target object JSON:", error));
 
           fetch('./static/video_files.json')
             .then(response => response.json())
@@ -481,14 +489,6 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
                 }
             })
             .catch(error => console.error("Error loading video filenames:", error));
-
-          fetch('./static/target_objects.json')
-            .then(response => response.json())
-            .then(data => {
-                let targetText = data[scene] || ""; 
-                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
-            })
-            .catch(error => console.error("Error loading target object JSON:", error));
       }
     </script>
 
