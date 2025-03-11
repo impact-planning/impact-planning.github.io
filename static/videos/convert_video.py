@@ -2,13 +2,13 @@ import os
 import ffmpeg
 
 
-input_dir = "./"
+input_dir = "./real/"
 video_list = os.listdir(input_dir)
 
 for i, video in enumerate(video_list):
     if not video.endswith(".mov"):
         continue
-    
+
     input_file = os.path.join(input_dir, video)
     output_file = os.path.join(input_dir, video.replace(".mov", ".mp4"))
     
