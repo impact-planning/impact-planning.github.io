@@ -277,15 +277,22 @@
           The target object is <b>the tomato can</b>.
         </p> -->
         
-        <div class="dropdown-container">
-          <label><strong>Scene</strong></label>
-          <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
-          </select>
-        </div>
+        <div class="columns is-centered is-vcentered">
 
-        <p id="target-object-text" class="has-text-centered">
-          The target object is <strong>the tomato can</strong>.
-        </p>
+          <div class="column is-narrow has-text-centered">
+            <div class="dropdown-container">
+              <label><strong>Scene</strong></label>
+              <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
+              </select>
+            </div>
+          </div>
+        
+          <div class="column is-narrow has-text-centered">
+            <p id="target-object-text">
+              The target object is <strong>the tomato can</strong>.
+            </p>
+          </div>
+        </div>        
 
         <div class="columns is-centered">
           <div class="column is-6 has-text-centered">
@@ -369,7 +376,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       for (let i = 1; i <= 10; i++) {
           let option = document.createElement("option");
           option.value = `scene${i}`; // Value in the format "scene1", "scene2", etc.
-          option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
+          // option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
           sceneDropdown.appendChild(option);
       }
     </script>
@@ -386,8 +393,8 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
                   let lappFilename = videoData[scene]["lapp"];
                   let oursFilename = videoData[scene]["ours"];
 
-                  document.getElementById("video-real-left-source").src = `./static/videos/real/${lappFilename}`;
-                  document.getElementById("video-real-right-source").src = `./static/videos/real/${oursFilename}`;
+                  document.getElementById("video-real-left").src = `./static/videos/real/${lappFilename}`;
+                  document.getElementById("video-real-right").src = `./static/videos/real/${oursFilename}`;
 
                   document.getElementById("video-real-left").load();
                   document.getElementById("video-real-right").load();

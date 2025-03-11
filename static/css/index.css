@@ -215,3 +215,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.scene-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Space between dropdown and text */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
