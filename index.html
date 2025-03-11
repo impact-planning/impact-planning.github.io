@@ -257,25 +257,52 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Real World Experiments</h2>
         
-        <div class="columns is-centered">
+        <!-- <div class="columns is-centered">
           <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Baseline: LAPP</h3>
-            <video width="96%" controls muted>
+            <video width="98%" controls muted>
               <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
             </video>
           </div>
 
           <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-            <video width="96%" controls muted>
+            <video width="98%" controls muted>
               <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
         <p class="has-text-centered">
-          The target object is the tomato can.
-        </p>
+          The target object is <b>the tomato can</b>.
+        </p> -->
+        
+          <div class="dropdown-container">
+            <label><strong>Scene</strong></label>
+            <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
+            </select>
+          </div>
+
+          <p id="target-object-text" class="has-text-centered">
+            The target object is <strong>the tomato can</strong>.
+          </p>
+
+          <div class="columns is-centered">
+            <div class="column is-6 has-text-centered">
+              <h3 class="title is-4">Baseline: LAPP</h3>
+              <video id="video-real-left" width="98%" controls muted>
+                <source src="./static/videos/real/scene1-lapp-8.mp4" type="video/mp4">
+              </video>
+            </div>
+      
+            <div class="column is-6 has-text-centered">
+              <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
+              <video id="video-real-right" width="98%" controls muted>
+                <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -288,39 +315,6 @@
         </p>
       </div>
     </div>
-
-      <!-- <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div> -->
-
-      <!-- <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div> -->
-
 
 
     <div class="columns is-centered">
@@ -358,7 +352,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
           </pre>
         </div>
       </div>
-  
+<!--   
       <script>
           function copyText() {
               let text = document.getElementById("textBlock").innerText;
@@ -368,7 +362,51 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
                   console.error("Failed to copy: ", err);
               });
           }
-      </script>
+      </script> -->
+
+    
+    <script>
+      let sceneDropdown = document.getElementById("scene-select-real");
+      for (let i = 1; i <= 10; i++) {
+          let option = document.createElement("option");
+          option.value = `scene${i}`; // Value in the format "scene1", "scene2", etc.
+          option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
+          sceneDropdown.appendChild(option);
+      }
+    </script>
+
+
+    <script>
+      function updateVideosReal() {
+          let scene = document.getElementById("scene-select-real").value;
+
+          fetch('./static/video_files.json')
+          .then(response => response.json())
+          .then(videoData => {
+              if (videoData[scene]) {
+                  let lappFilename = videoData[scene]["lapp"];
+                  let oursFilename = videoData[scene]["ours"];
+
+                  document.getElementById("video-real-left-source").src = `./static/videos/real/${lappFilename}`;
+                  document.getElementById("video-real-right-source").src = `./static/videos/real/${oursFilename}`;
+
+                  document.getElementById("video-real-left").load();
+                  document.getElementById("video-real-right").load();
+              } else {
+                  console.error("Scene not found in video JSON:", scene);
+              }
+          })
+          .catch(error => console.error("Error loading video filenames:", error));
+
+          fetch('./static/target_objects.json')
+            .then(response => response.json())
+            .then(data => {
+                let targetText = data[scene] || ""; 
+                document.getElementById("target-object-text").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+            })
+            .catch(error => console.error("Error loading target object JSON:", error));
+      }
+    </script>
 
 
 

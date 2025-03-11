@@ -171,7 +171,7 @@ body {
   background-color: #d4d4d4; /* Light gray background */
   color: #000000; /* Black text */
   font-family: 'Courier New', Courier, monospace !important; /* Standard readable font */
-  font-size: 18px !important;
+  font-size: 16px !important;
   padding: 10px;
   line-height: 1.6;
   border-radius: 5px;
@@ -198,4 +198,20 @@ body {
 
 .copy-button:hover {
   background-color: #9ddcf3;
+}
+
+.dropdown-container {
+  margin-bottom: 10px; 
+}
+
+.dropdown-container label {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.dropdown {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

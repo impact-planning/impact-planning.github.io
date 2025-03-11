@@ -1,0 +1,10 @@
+{
+    "scene1": {
+        "lapp": "scene1-lapp-8.mp4",
+        "ours": "scene1-ours-7.mp4"
+    },
+    "scene2": {
+        "lapp": "scene2-lapp-5.mp4",
+        "ours": "scene2-ours-3.mp4"
+    }
+}
