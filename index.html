@@ -315,9 +315,21 @@
         <!-- <div class="sim-video-container"> -->
           <div class="column is-6 has-text-centered">
           <!-- <div class="sim-video-column"> -->
-            <h3 class="title is-4">Baseline</h3>
+            <h3 class="title is-4">Baseline
+              <span class="dropdown-container">
+                <label for="method-select-sim"><strong>Method:</strong></label>
+                <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()">
+                  <option value="impact-rrt">IMPACT+RRT</option>
+                  <option value="impact-mpc">IMPACT+MPC</option>
+                  <option value="collision_free-rrt_star">Collision-Free+RRT*</option>
+                  <option value="collision_free-rrt">Collision-Free+RRT</option>
+                  <option value="collision_free-mpc">Collision-Free+MPC</option>
+                  <option value="lapp">LAPP</option>
+                </select>
+              </span>
+            </h3>
 
-            <div class="dropdown-row">
+            <!-- <div class="dropdown-row">
               <div class="dropdown-container">
                 <label><strong>Method</strong></label>
                 <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()">
@@ -330,7 +342,7 @@
                 </select>
 
               </div>
-            </div>
+            </div> -->
             <br/>
 
             <video id="video-sim-left" width="98%" controls muted autoplay loop>
