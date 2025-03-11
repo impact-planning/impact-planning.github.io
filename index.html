@@ -276,14 +276,14 @@
         <div class="columns is-centered">
           <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Baseline: LAPP</h3>
-            <video id="video-real-left" width="98%" controls muted>
+            <video id="video-real-left" width="98%" controls muted autoplay loop>
               <source src="./static/videos/real/scene1-lapp-8.mp4" type="video/mp4">
             </video>
           </div>
     
           <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-            <video id="video-real-right" width="98%" controls muted>
+            <video id="video-real-right" width="98%" controls muted autoplay loop>
               <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
             </video>
           </div>
@@ -332,7 +332,7 @@
             </div>
             <br/>
 
-            <video id="video-sim-left" width="98%" controls muted>
+            <video id="video-sim-left" width="98%" controls muted autoplay loop>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
             </video>
             <p id="no-path-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
@@ -340,7 +340,7 @@
     
           <div class="video-column">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-            <video id="video-sim-right" width="98%" controls muted>
+            <video id="video-sim-right" width="98%" controls muted autoplay loop>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
             </video>
             <p id="no-path-right" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
@@ -402,7 +402,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       let sceneDropdownSim = document.getElementById("scene-select-sim");
       for (let i = 1; i <= 20; i++) {
           let option = document.createElement("option");
-          index = i.padStart(2, "0");
+          index = i.toString().padStart(2, "0");
           option.value = `scene1${index}`; 
           option.textContent = i.toString().padStart(2, "0"); 
           sceneDropdownSim.appendChild(option);
