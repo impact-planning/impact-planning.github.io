@@ -230,7 +230,7 @@ body {
 
 .scene-container {
   display: flex;
-  justify-content: center; /* Centers elements horizontally */
+  justify-content: center, flex-end !important; /* Centers elements horizontally */
   align-items: center; /* Aligns items in the middle */
   gap: 20px; /* Space between dropdown and text */
   flex-wrap: wrap; /* Ensures responsiveness */
