@@ -321,22 +321,25 @@
           <div class="columns is-centered is-vcentered">
             <!-- <h3 class="title is-4">Baseline</h3> -->
 
-            <div class="dropdown-container">
-              <label><strong>Category</strong></label>
-              <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
-                <option value="impact">IMPACT</option>
-                <option value="collision_free">Collision Free</option>
-                <option value="-">-</option>
-              </select>
+            <div class="dropdown-row">
+              <div class="dropdown-container">
+                <label><strong>Category</strong></label>
+                <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
+                  <option value="impact">IMPACT</option>
+                  <option value="collision_free">Collision Free</option>
+                  <option value="-">-</option>
+                </select>
 
-              <label><strong>Path Planning Method</strong></label>
-              <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
-                <option value="rrt_star">RRT*</option>
-                <option value="rrt">RRT</option>
-                <option value="mpc">MPC</option>
-                <option value="lapp">LAPP</option>
-              </select>
+                <label><strong>Path Planning Method</strong></label>
+                <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
+                  <option value="rrt_star">RRT*</option>
+                  <option value="rrt">RRT</option>
+                  <option value="mpc">MPC</option>
+                  <option value="lapp">LAPP</option>
+                </select>
+              </div>
             </div>
+            <br/>
 
             <video id="video-sim-left" width="60%" controls muted>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
@@ -432,6 +435,27 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
               } else {
                   console.error("Scene not found in video JSON:", scene);
               }
+          })
+          .catch(error => console.error("Error loading video filenames:", error));
+
+          fetch('./static/target_objects.json')
+            .then(response => response.json())
+            .then(data => {
+                let targetText = data[scene] || ""; 
+                document.getElementById("target-object-text").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+            })
+            .catch(error => console.error("Error loading target object JSON:", error));
+      }
+    </script>
+
+    <script>
+      function updateVideosSim() {
+          let scene = document.getElementById("scene-select-sim").value;
+
+          fetch('./static/video_files.json')
+          .then(response => response.json())
+          .then(videoData => {
+            
           })
           .catch(error => console.error("Error loading video filenames:", error));
 
