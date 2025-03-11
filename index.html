@@ -468,7 +468,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
 
     <script>
       function updateVideosSim() {
-          let scene = document.getElementById("scene-select-sim");
+          let scene = document.getElementById("scene-select-sim").value;
           let method = document.getElementById("method-select-sim").value;
 
           fetch('./static/target_objects.json')
