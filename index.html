@@ -257,37 +257,18 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Real World Experiments</h2>
         
-        <!-- <div class="columns is-centered">
-          <div class="column is-6 has-text-centered">
-            <h3 class="title is-4">Baseline: LAPP</h3>
-            <video width="98%" controls muted>
-              <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-6 has-text-centered">
-            <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-            <video width="98%" controls muted>
-              <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <p class="has-text-centered">
-          The target object is <b>the tomato can</b>.
-        </p> -->
-        
         <div class="columns is-centered is-vcentered">
 
-          <div class="column is-narrow has-text-centered">
+          <!-- <div class="column is-narrow has-text-centered"> -->
+          <div class="scene-container">
             <div class="dropdown-container">
               <label><strong>Scene</strong></label>
               <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
               </select>
             </div>
-          </div>
+          <!-- </div>
         
-          <div class="column is-narrow has-text-centered">
+          <div class="column is-narrow has-text-centered"> -->
             <p id="target-object-text">
               The target object is <strong>the tomato can</strong>.
             </p>
@@ -376,7 +357,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       for (let i = 1; i <= 10; i++) {
           let option = document.createElement("option");
           option.value = `scene${i}`; // Value in the format "scene1", "scene2", etc.
-          // option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
+          option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
           sceneDropdown.appendChild(option);
       }
     </script>
