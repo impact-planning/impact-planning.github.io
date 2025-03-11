@@ -259,16 +259,14 @@
         
         <div class="columns is-centered is-vcentered">
 
-          <!-- <div class="column is-narrow has-text-centered"> -->
           <div class="scene-container">
             <div class="dropdown-container">
               <label><strong>Scene</strong></label>
               <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
               </select>
             </div>
-          <!-- </div>
-        
-          <div class="column is-narrow has-text-centered"> -->
+            <br/> 
+
             <p id="target-object-text">
               The target object is <strong>the tomato can</strong>.
             </p>
@@ -301,6 +299,58 @@
         <p>
           TODO
         </p>
+
+        <div class="columns is-centered is-vcentered">
+
+          <div class="scene-container">
+            <div class="dropdown-container">
+              <label><strong>Scene</strong></label>
+              <select class="dropdown" id="scene-select-sim" onchange="updateVideosSim()">
+              </select>
+            </div>
+            <br/>
+            
+            <p id="target-object-text">
+              The target object is <strong>the foam brick</strong>.
+            </p>
+          </div>
+        </div>        
+
+        <div class="columns is-centered">
+          <!-- <div class="column is-6 has-text-centered"> -->
+          <div class="columns is-centered is-vcentered">
+            <!-- <h3 class="title is-4">Baseline</h3> -->
+
+            <div class="dropdown-container">
+              <label><strong>Category</strong></label>
+              <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
+                <option value="impact">IMPACT</option>
+                <option value="collision_free">Collision Free</option>
+                <option value="-">-</option>
+              </select>
+
+              <label><strong>Path Planning Method</strong></label>
+              <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
+                <option value="rrt_star">RRT*</option>
+                <option value="rrt">RRT</option>
+                <option value="mpc">MPC</option>
+                <option value="lapp">LAPP</option>
+              </select>
+            </div>
+
+            <video id="video-sim-left" width="80%" controls muted>
+              <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <!-- <div class="column is-6 has-text-centered">
+            <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
+            <video id="video-sim-right" width="98%" controls muted>
+              <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
+            </video>
+          </div> -->
+        </div>
+
       </div>
     </div>
     <br/> 

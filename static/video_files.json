@@ -38,5 +38,14 @@
     "scene10": {
         "lapp": "scene10-lapp-6.mp4",
         "ours": "scene10-ours-9.mp4"
+    },
+    "scene110": {
+        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
+        "--lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
     }
 }
