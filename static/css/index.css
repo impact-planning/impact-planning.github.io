@@ -173,7 +173,10 @@ body {
   font-family: "Courier New", monospace;
   padding: 10px;
   border-radius: 5px;
-  max-height: 200px; /* Adjust height for 6 lines */
+  max-height: 200px; 
+  width: 100%;
+  display: block;
+  box-sizing: border-box; 
   overflow-y: auto; /* Enable scrolling */
   white-space: pre-wrap; /* Wrap long lines */
   word-break: break-word; /* Prevent overflow */

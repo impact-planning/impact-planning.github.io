@@ -331,7 +331,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
           function copyCode() {
               let code = document.getElementById("codeBlock").innerText;
               navigator.clipboard.writeText(code).then(() => {
-                  alert("Code copied to clipboard!");
+                  // alert("Code copied to clipboard!");
               }).catch(err => {
                   console.error("Failed to copy: ", err);
               });
