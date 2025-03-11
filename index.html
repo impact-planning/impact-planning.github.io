@@ -312,6 +312,25 @@
             <p id="target-object-text-sim">
               The target object is <strong>the foam brick</strong>.
             </p>
+            <br/>
+
+            <div class="dropdown-container">
+              <label><strong>Category</strong></label>
+              <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
+                <option value="impact">IMPACT</option>
+                <option value="collision_free">Collision Free</option>
+                <option value="-">-</option>
+              </select>
+
+              <label><strong>Path Planning Method</strong></label>
+              <select class="dropdown" id="planning-select-left" onchange="updateVideosSim()">
+                <option value="rrt_star">RRT*</option>
+                <option value="rrt">RRT</option>
+                <option value="mpc">MPC</option>
+                <option value="lapp">LAPP</option>
+              </select>
+            </div>
+
           </div>
         </div>    
         <br/>    
@@ -321,7 +340,7 @@
           <div class="columns is-centered is-vcentered">
             <!-- <h3 class="title is-4">Baseline</h3> -->
 
-            <div class="dropdown-row">
+            <!-- <div class="dropdown-row">
               <div class="dropdown-container">
                 <label><strong>Category</strong></label>
                 <select class="dropdown" id="category-select-left" onchange="updateVideosSim()">
@@ -339,7 +358,7 @@
                 </select>
               </div>
             </div>
-            <br/>
+            <br/> -->
 
             <video id="video-sim-left" width="60%" controls muted>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
