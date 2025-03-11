@@ -168,7 +168,7 @@ body {
 }
 
 .text-block {
-  background-color: #d4d4d4; /* Light gray background */
+  background-color: #d6d6d6; /* Light gray background */
   color: #000000; /* Black text */
   font-family: 'Courier New', Courier, monospace !important; /* Standard readable font */
   font-size: 16px !important;
@@ -215,8 +215,8 @@ body {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  height: 24px;
-  vertical-align: middle;
+  height: 24px !important;
+  /* vertical-align: middle; */
 }
 
 .scene-container {
