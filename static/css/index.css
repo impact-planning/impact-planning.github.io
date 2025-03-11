@@ -200,13 +200,13 @@ body {
   background-color: #9ddcf3;
 }
 
-/* .dropdown-container {
-  margin-bottom: 10px; 
-} */
+.dropdown-container {
+  margin-bottom: 0px !important; 
+}
 
 .dropdown-container label {
   display: flex;
-  align-items: center;
+  align-items: center !important;
   margin-right: 5px;
 }
 

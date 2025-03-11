@@ -389,6 +389,18 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
           </pre>
         </div>
       </div>
+
+    
+    <script>
+        function copyText() {
+            let text = document.getElementById("textBlock").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                // alert("Text copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        }
+    </script>
     
     <script>
       let sceneDropdownReal = document.getElementById("scene-select-real");
@@ -456,7 +468,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
 
             console.log("Scene selected:", scene);
             console.log("Target object retrieved:", targetText);
-            
+
                 document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
