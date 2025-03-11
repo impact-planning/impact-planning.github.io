@@ -453,7 +453,10 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             .then(response => response.json())
             .then(data => {
                 let targetText = data[scene] || ""; 
-                print(scene, targetText);
+
+            console.log("Scene selected:", scene);
+            console.log("Target object retrieved:", targetText);
+            
                 document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
