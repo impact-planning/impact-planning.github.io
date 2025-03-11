@@ -237,7 +237,7 @@ body {
 }
 
 
-.video-container {
+.sim-video-container {
   display: flex;
   align-items: flex-start; /* Ensures top alignment */
   justify-content: center; /* Centers both columns */
@@ -246,7 +246,7 @@ body {
   width: 100%; 
 }
 
-.video-column {
+.sim-video-column {
   display: flex;
   flex-direction: column;
   align-items: center; /* Ensures center alignment */
@@ -256,22 +256,22 @@ body {
   max-width: 50%;  
 }
 
-.video-column h3, .dropdown-container {
+.sim-video-column h3, .dropdown-container {
   text-align: center;
   width: 100%;
 }
 
-.video-column .dropdown-row {
+.sim-video-column .dropdown-row {
   margin-bottom: 10px; /* Space between dropdown and video */
 }
 
-.video-column video {
+.sim-video-column video {
   width: 98%;
   max-width: 600px; /* Prevents videos from growing too large */
   height: auto; 
 }
 
-.video-column p {
+.sim-video-column p {
   text-align: center;
   font-weight: bold;
   display: none; /* "No path found" is hidden by default */

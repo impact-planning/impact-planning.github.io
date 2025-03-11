@@ -407,6 +407,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
           option.textContent = i.toString().padStart(2, "0"); 
           sceneDropdownSim.appendChild(option);
       }
+      print(sceneDropdownSim);
     </script>
 
 
@@ -483,7 +484,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
           fetch('./static/target_objects.json')
             .then(response => response.json())
             .then(data => {
-                let targetText = data[scene] || "an unknown object"; 
+                let targetText = data[scene] || ""; 
                 document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
