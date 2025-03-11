@@ -266,7 +266,7 @@
               </select>
             </div>
 
-            <p id="target-object-text">
+            <p id="target-object-text-real">
               The target object is <strong>the tomato can</strong>.
             </p>
           </div>
@@ -309,7 +309,7 @@
               </select>
             </div>
             
-            <p id="target-object-text">
+            <p id="target-object-text-sim">
               The target object is <strong>the foam brick</strong>.
             </p>
           </div>
@@ -442,7 +442,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             .then(response => response.json())
             .then(data => {
                 let targetText = data[scene] || ""; 
-                document.getElementById("target-object-text").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+                document.getElementById("target-object-text-real").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
       }
@@ -463,7 +463,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             .then(response => response.json())
             .then(data => {
                 let targetText = data[scene] || ""; 
-                document.getElementById("target-object-text").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
       }

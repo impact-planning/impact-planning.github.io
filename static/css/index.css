@@ -217,7 +217,7 @@ body {
   border-radius: 5px;
   height: 32px !important;
   /* vertical-align: middle; */  
-  min-width: 160px;
+  /* min-width: 160px; */
 }
 
 .dropdown-row {
