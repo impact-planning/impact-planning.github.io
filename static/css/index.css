@@ -249,11 +249,13 @@ body {
   flex-direction: column;
   align-items: center; /* Ensures center alignment */
   justify-content: flex-start; /* Aligns videos at the top */
-  width: 49%; /* Ensures equal width */
+  width: 49%; 
+  max-width: 50%;  
 }
 
-.video-column h3 {
-  margin-bottom: 10px; /* Space below heading */
+.video-column h3, .dropdown-container {
+  text-align: center;
+  width: 100%;
 }
 
 .video-column .dropdown-row {

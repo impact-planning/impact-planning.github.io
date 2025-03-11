@@ -402,8 +402,9 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
       let sceneDropdownSim = document.getElementById("scene-select-sim");
       for (let i = 1; i <= 20; i++) {
           let option = document.createElement("option");
-          option.value = `scene1${i}`; // Value in the format "scene1", "scene2", etc.
-          option.textContent = i.toString().padStart(2, "0"); // Display "01", "02", ..., "10"
+          index = i.padStart(2, "0");
+          option.value = `scene1${index}`; 
+          option.textContent = i.toString().padStart(2, "0"); 
           sceneDropdownSim.appendChild(option);
       }
     </script>
@@ -443,7 +444,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
 
     <script>
       function updateVideosSim() {
-          let scene = document.getElementById("scene-select-sim").value.padStart(2, "0");
+          let scene = document.getElementById("scene-select-sim");
           let method = document.getElementById("method-select-sim").value;
 
           fetch('./static/video_files.json')
@@ -483,7 +484,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             .then(response => response.json())
             .then(data => {
                 let targetText = data[scene] || "an unknown object"; 
-                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>${targetText}</strong>.`;
+                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
       }
