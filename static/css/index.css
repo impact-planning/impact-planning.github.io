@@ -212,7 +212,7 @@ body {
 .dropdown-container label {
   display: flex;
   align-items: center !important;
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .dropdown {
@@ -243,40 +243,3 @@ body {
   width: 100%;
   text-align: center; /* Ensures inner text is also centered */
 }
-
-
-.sim-video-container {
-  display: flex;
-  justify-content: center; /* Ensures videos are centered */
-  align-items: flex-start; /* Aligns both videos at the top */
-  gap: 20px; /* Adds space between left and right videos */
-  flex-wrap: wrap; /* Allows responsiveness */
-  width: 100%;
-}
-
-.sim-video-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers dropdown, text, and video */
-  justify-content: flex-start; /* Aligns videos at the top */
-  flex: 1; /* Ensures equal width distribution */
-  max-width: 50%; /* Prevents one column from getting larger */
-  box-sizing: border-box; /* Ensures proper width calculation */
-  text-align: center; /* Centers the text above each video */
-}
-
-.sim-video-column video {
-  width: 100%; /* Ensures video scales within its column */
-  max-width: 600px; /* Prevents videos from growing too large */
-  height: auto; /* Keeps aspect ratio */
-}
-
-.sim-video-column h3, .dropdown-container {
-  text-align: center;
-  width: 100%;
-}
-
-.sim-video-column .dropdown-row {
-  margin-bottom: 10px; /* Space between dropdown and video */
-}
-
