@@ -314,9 +314,9 @@
             </p>
             <br/>  
 
-        <div class="columns is-centered">
+        <div class="sim-video-container">
           <!-- <div class="column is-6 has-text-centered"> -->
-          <div class="columns is-centered is-vcentered">
+          <div class="sim-video-column">
             <h3 class="title is-4">Baseline</h3>
 
             <div class="dropdown-row">
@@ -341,7 +341,7 @@
             <p id="no-path-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
           </div>
     
-          <div class="column is-6 has-text-centered">
+          <div class="video-column">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
             <video id="video-sim-right" width="98%" controls muted>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
@@ -446,7 +446,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
 
     <script>
       function updateVideosSim() {
-          let scene = document.getElementById("scene-select-sim").value;
+          let scene = document.getElementById("scene-select-sim").value.padStart(2, "0");
           let method = document.getElementById("method-select-sim").value;
 
           fetch('./static/video_files.json')

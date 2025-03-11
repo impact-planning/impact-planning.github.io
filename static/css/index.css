@@ -235,3 +235,37 @@ body {
   gap: 20px; /* Space between dropdown and text */
   flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
+
+
+.video-container {
+  display: flex;
+  align-items: flex-start; /* Ensures top alignment */
+  justify-content: center; /* Centers both columns */
+  gap: 20px; /* Adds space between left and right columns */
+}
+
+.video-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures center alignment */
+  justify-content: flex-start; /* Aligns videos at the top */
+  width: 50%; /* Ensures equal width */
+}
+
+.video-column h3 {
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.video-column .dropdown-row {
+  margin-bottom: 10px; /* Space between dropdown and video */
+}
+
+.video-column video {
+  width: 98%;
+}
+
+.video-column p {
+  text-align: center;
+  font-weight: bold;
+  display: none; /* "No path found" is hidden by default */
+}
