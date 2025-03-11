@@ -40,183 +40,180 @@
         "ours": "scene10-ours-9.mp4"
     },
     "scene101": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene101-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene101-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene101-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene101-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene101-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene101-shelf2-center-lapp_video.mp4",
+        "lapp": "scene101-shelf2-center-lapp_video.mp4"
     },
     "scene102": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene102-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene102-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene102-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene102-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene102-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene102-shelf2-center-lapp_video.mp4",
+        "lapp": "scene102-shelf2-center-lapp_video.mp4"
     },
     "scene103": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene103-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene103-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene103-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene103-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene103-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene103-shelf2-center-lapp_video.mp4"
     },
     "scene104": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene104-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene104-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene104-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene104-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene104-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene104-shelf2-center-lapp_video.mp4",
+        "lapp": "scene104-shelf2-center-lapp_video.mp4"
     },
     "scene105": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene105-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene105-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene105-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene105-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene105-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene105-shelf2-center-lapp_video.mp4",
+        "lapp": "scene105-shelf2-center-lapp_video.mp4"
     },
     "scene106": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene106-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene106-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene106-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene106-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene106-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene106-shelf2-center-lapp_video.mp4",
+        "lapp": "scene106-shelf2-center-lapp_video.mp4"
     },
     "scene107": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene107-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene107-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene107-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene107-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene107-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene107-shelf2-center-lapp_video.mp4",
+        "lapp": "scene107-shelf2-center-lapp_video.mp4"
     },
     "scene108": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene108-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene108-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene108-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene108-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene108-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene108-shelf2-center-lapp_video.mp4",
+        "lapp": "scene108-shelf2-center-lapp_video.mp4"
     },
     "scene109": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene109-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene109-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene109-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene109-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene109-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene109-shelf2-center-lapp_video.mp4",
+        "lapp": "scene109-shelf2-center-lapp_video.mp4"
     },
     "scene110": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene110-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene110-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene110-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene110-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene110-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene110-shelf2-center-lapp_video.mp4",
+        "lapp": "scene110-shelf2-center-lapp_video.mp4"
     },
     "scene111": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene111-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene111-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene111-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene111-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene111-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene111-shelf2-center-lapp_video.mp4",
+        "lapp": "scene111-shelf2-center-lapp_video.mp4"
     },
     "scene112": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene112-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene112-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene112-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene112-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene112-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene112-shelf2-center-lapp_video.mp4",
+        "lapp": "scene112-shelf2-center-lapp_video.mp4"
     },
     "scene113": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene113-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene113-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene113-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene113-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene113-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene113-shelf2-center-lapp_video.mp4",
+        "lapp": "scene113-shelf2-center-lapp_video.mp4"
     },
     "scene114": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene114-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene114-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene114-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene114-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene114-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene114-shelf2-center-lapp_video.mp4"
     },
     "scene115": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene115-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene115-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene115-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene115-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene115-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene115-shelf2-center-lapp_video.mp4",
+        "lapp": "scene115-shelf2-center-lapp_video.mp4"
     },
     "scene116": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene116-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene116-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene116-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene116-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene116-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene116-shelf2-center-lapp_video.mp4",
+        "lapp": "scene116-shelf2-center-lapp_video.mp4"
     },
     "scene117": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene117-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene117-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene117-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene117-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene117-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene117-shelf2-center-lapp_video.mp4",
+        "lapp": "scene117-shelf2-center-lapp_video.mp4"
     },
     "scene118": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene118-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene118-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene118-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene118-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene118-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene118-shelf2-center-lapp_video.mp4",
+        "lapp": "scene118-shelf2-center-lapp_video.mp4"
     },
     "scene119": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene119-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene119-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene119-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene119-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene119-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene119-shelf2-center-lapp_video.mp4",
+        "lapp": "scene119-shelf2-center-lapp_video.mp4"
     },
     "scene120": {
-        "impact-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "impact-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt_star": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-rrt": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "collision_free-mpc": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4",
-        "lapp": "scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4"
+        "impact-rrt_star": "scene120-shelf2-center-lapp_video.mp4",
+        "impact-rrt": "scene120-shelf2-center-lapp_video.mp4",
+        "impact-mpc": "scene120-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt_star": "scene120-shelf2-center-lapp_video.mp4",
+        "collision_free-rrt": "scene120-shelf2-center-lapp_video.mp4",
+        "collision_free-mpc": "scene120-shelf2-center-lapp_video.mp4"
     }
 }
