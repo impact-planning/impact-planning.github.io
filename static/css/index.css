@@ -200,9 +200,9 @@ body {
   background-color: #9ddcf3;
 }
 
-.dropdown-container {
+/* .dropdown-container {
   margin-bottom: 10px; 
-}
+} */
 
 .dropdown-container label {
   display: flex;
@@ -216,7 +216,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 32px !important;
-  /* vertical-align: middle; */  
+  vertical-align: text-bottom !important;
   /* min-width: 160px; */
 }
 
