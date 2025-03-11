@@ -201,8 +201,12 @@ body {
 }
 
 .dropdown-container {
-  margin-bottom: 10px !important; 
-  align-items: center !important;
+  /* margin-bottom: 10px !important; 
+  align-items: center !important; */
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 5px;
 }
 
 .dropdown-container label {
