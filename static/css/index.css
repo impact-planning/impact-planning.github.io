@@ -165,14 +165,15 @@ body {
 .text-container {
   position: relative;
   width: 100%;
-  /* max-width: 800px; Adjust width if needed */
 }
 
 .text-block {
-  background-color: #f5f5f5; /* Light gray background */
+  background-color: #e7e7e7; /* Light gray background */
   color: #000000; /* Black text */
   font-family: Arial, sans-serif; /* Standard readable font */
+  font-size: 18px;
   padding: 10px;
+  line-height: 1.6;
   border-radius: 5px;
   max-height: 200px; /* Limits height to 6 lines */
   width: 100%;
@@ -188,7 +189,7 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #8be08e;
+  background-color: #b8f1ba;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -197,5 +198,5 @@ body {
 }
 
 .copy-button:hover {
-  background-color: #8be08e;
+  background-color: #b8f1ba;
 }
