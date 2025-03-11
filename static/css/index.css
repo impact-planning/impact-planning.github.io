@@ -165,7 +165,7 @@ body {
 .text-container {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust width if needed */
+  /* max-width: 800px; Adjust width if needed */
 }
 
 .text-block {
@@ -181,7 +181,7 @@ body {
   overflow-y: auto; /* Enables scrolling */
   white-space: pre-wrap; /* Ensures text wraps correctly */
   word-break: break-word; /* Prevents overflow */
-  border: 1px solid #ddd; /* Adds a subtle border */
+  /* border: 1px solid #ddd; Adds a subtle border */
 }
 
 .copy-button {
