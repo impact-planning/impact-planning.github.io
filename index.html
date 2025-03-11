@@ -294,10 +294,9 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Full Prompt</h2> 
         
-        <div class="code-container">
-          <button class="copy-button" onclick="copyCode()">Copy</button>
-          <pre class="code-block" id="codeBlock">
-            <code>
+        <div class="text-container">
+          <button class="copy-button" onclick="copyText()">Copy</button>
+          <pre class="text-block" id="textBlock">
 You are an advanced AI system designed to assist in robotic navigation within cluttered environments. 
 Your task is to evaluate the safety of various objects in a scene, considering not only the individual characteristics of each object but also their interactions and the physical principles that govern their stability and potential movement. 
 For each listed object, you will assign a safety score ranging from 0 to 10, where 0 indicates minimal risk of damage upon collision and 10 signifies a high risk of damage. 
@@ -323,7 +322,6 @@ Format Requirements:
 Input objects:
 {object_list}
 Your analysis should be comprehensive, considering the dynamic interactions between objects and the physical principles that may affect the outcome of a collision.
-            </code>
           </pre>
       </div>
   
