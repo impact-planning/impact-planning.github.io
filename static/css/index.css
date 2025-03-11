@@ -235,6 +235,7 @@ body {
 
 .scene-container {
   display: flex;
+  font-size: 20px;
   justify-content: center !important; /* Centers elements horizontally */
   align-items: center !important; /* Aligns items in the middle */
   gap: 20px; /* Space between dropdown and text */

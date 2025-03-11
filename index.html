@@ -255,7 +255,7 @@
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Real World Experiments</h2>
+        <h2 class="title is-3">Real World Results</h2>
         
         <div class="columns is-centered is-vcentered">
 
@@ -295,7 +295,7 @@
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Simulation Experiments</h2> 
+        <h2 class="title is-3">Simulation Results</h2> 
 
         <div class="columns is-centered is-vcentered">
 
@@ -318,7 +318,7 @@
             <div class="is-inline-flex" style="align-items: baseline;  gap: 2px;">
               <!-- <h3 class="title is-4" style="margin: 0;">Baseline</h3>
               <label class="title is-4" style="margin: 0;"><strong>:</strong></label> -->
-              <h3 class="title is-4" style="margin: 0; display: inline-block;">Baseline:</h3>
+              <h3 class="title is-4" style="margin: 3; display: inline-block;">Baseline:</h3>
               <select class="dropdown" id="method-select-sim" style="display: inline-block;" onchange="updateVideosSim()">
               <!-- <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()"> -->
                 <option value="impact-rrt">IMPACT+RRT</option>
@@ -330,29 +330,12 @@
               </select>
             </div>
 
-            <!-- <div class="dropdown-row">
-              <div class="dropdown-container">
-                <label><strong>Method</strong></label>
-                <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()">
-                  <option value="impact-rrt">IMPACT+RRT</option>
-                  <option value="impact-mpc">IMPACT+MPC</option>
-                  <option value="collision_free-rrt_star">Collision-Free+RRT*</option>
-                  <option value="collision_free-rrt">Collision-Free+RRT</option>
-                  <option value="collision_free-mpc">Collision-Free+MPC</option>
-                  <option value="lapp">LAPP</option>
-                </select>
-
-              </div>
-            </div> -->
-            <!-- <br/> -->
-
             <video id="video-sim-left" width="98%" controls muted autoplay loop>
               <source src="./static/videos/sim/scene110-default-shelf2-center-rrt_star-200-10-04_video.mp4" type="video/mp4">
             </video>
             <p id="no-path-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
           </div>
     
-          <!-- <div class="video-column"> -->
           <div class="column is-6 has-text-centered">
             <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
             <video id="video-sim-right" width="98%" controls muted autoplay loop>
