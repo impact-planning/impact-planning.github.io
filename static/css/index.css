@@ -168,21 +168,20 @@ body {
 }
 
 .text-block {
-  background-color: #e7e7e7; /* Light gray background */
+  background-color: #b9b9b9; /* Light gray background */
   color: #000000; /* Black text */
   font-family: 'Courier New', Courier, monospace; /* Standard readable font */
-  font-size: 24px;
+  font-size: 30px;
   padding: 10px;
   line-height: 1.6;
   border-radius: 5px;
-  max-height: 200px; /* Limits height to 6 lines */
+  max-height: 240px; /* Limits height to 6 lines */
   width: 100%;
   display: block;
   box-sizing: border-box; 
   overflow-y: auto; /* Enables scrolling */
   white-space: pre-wrap; /* Ensures text wraps correctly */
-  word-break: break-word; /* Prevents overflow */
-  /* border: 1px solid #ddd; Adds a subtle border */
+  word-break: break-word; 
 }
 
 .copy-button {
