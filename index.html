@@ -277,30 +277,29 @@
           The target object is <b>the tomato can</b>.
         </p> -->
         
-          <div class="dropdown-container">
-            <label><strong>Scene</strong></label>
-            <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
-            </select>
+        <div class="dropdown-container">
+          <label><strong>Scene</strong></label>
+          <select class="dropdown" id="scene-select-real" onchange="updateVideosReal()">
+          </select>
+        </div>
+
+        <p id="target-object-text" class="has-text-centered">
+          The target object is <strong>the tomato can</strong>.
+        </p>
+
+        <div class="columns is-centered">
+          <div class="column is-6 has-text-centered">
+            <h3 class="title is-4">Baseline: LAPP</h3>
+            <video id="video-real-left" width="98%" controls muted>
+              <source src="./static/videos/real/scene1-lapp-8.mp4" type="video/mp4">
+            </video>
           </div>
-
-          <p id="target-object-text" class="has-text-centered">
-            The target object is <strong>the tomato can</strong>.
-          </p>
-
-          <div class="columns is-centered">
-            <div class="column is-6 has-text-centered">
-              <h3 class="title is-4">Baseline: LAPP</h3>
-              <video id="video-real-left" width="98%" controls muted>
-                <source src="./static/videos/real/scene1-lapp-8.mp4" type="video/mp4">
-              </video>
-            </div>
-      
-            <div class="column is-6 has-text-centered">
-              <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-              <video id="video-real-right" width="98%" controls muted>
-                <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
-              </video>
-            </div>
+    
+          <div class="column is-6 has-text-centered">
+            <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
+            <video id="video-real-right" width="98%" controls muted>
+              <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 
