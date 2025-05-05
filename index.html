@@ -201,8 +201,52 @@
             Finally, an off-the-shelf motion planner (RRT*) uses this to guide the robot, which avoids the coffee cup but makes contact with the toy bear to successfully reach the tomato can. 
           </p>
         </div>
-        <br/> 
-        
+
+
+
+        <h3>Cost Map Visualization</h3>
+    
+        <p style="width: 80%; text-align: center; white-space: normal">
+          Under construction.
+        </p>
+        <div id="model-container" style="
+              width: 75%;
+              height: 400px;
+              background-color: white;
+              margin: 20px auto;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            "></div>
+    
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/examples/jsm/loaders/GLTFLoader": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js",
+                "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js"
+              }
+            }
+          </script>
+        <script type="module">
+          import { initModelViewer } from "./res/js/model-viewer.js";
+    
+          document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("model-container");
+    
+            // Set container style
+            container.style.borderRadius = "10px";
+            container.style.overflow = "hidden";
+            container.style.width = "91%";
+    
+            initModelViewer(
+              "model-container",
+              "./static/meshes/scene102_mesh.gltf",
+            );
+          });
+        </script>
+        <br/>
+      
 
     <div class="columns is-centered">
       <div class="column is-full-width">
