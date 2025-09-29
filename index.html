@@ -115,7 +115,6 @@
                   <span>Twitter(Coming Soon)</span>
                 </a>
               </span> -->
-
           </div>
         </div>
       </div>
@@ -126,20 +125,56 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
-      <!-- <h2 class="subtitle has-text-centered">
-        Some nice demos here.
-      </h2> -->
+      <div class="video-grid">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene2-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene3-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene4-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene5-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene6-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene7-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene8-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene9-ours-s-text.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/real/scene10-ours-s-text.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
 
+<style>
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 8px; /* space between videos */
+}
+
+.video-grid video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -147,31 +182,17 @@
           <p>
             Motion planning involves determining a sequence of robot configurations to reach a desired pose, subject to movement and safety constraints. 
             Traditional motion planning finds collision-free paths, but this is overly restrictive in clutter, where it may not be possible for a robot to accomplish a task without contact. 
-            In addition, contacts range from relatively benign (e.g., brushing a soft pillow) to more dangerous (e.g., toppling a glass vase). 
-            Due to this diversity, it is difficult to characterize which contacts may be acceptable or unacceptable. 
+            In addition, contacts range from relatively benign (e.g. brushing a soft pillow) to more dangerous (e.g. toppling a glass vase), making it difficult to characterize which may be acceptable. 
           </p>
           <p>
             In this paper, we propose <b>IMPACT</b>, a novel motion planning framework that uses Vision-Language Models (VLMs) to infer environment semantics, identifying which parts of the environment can best tolerate contact based on object properties and locations. 
-            Our approach uses the VLM's outputs to produce a dense 3D "cost map" that encodes contact tolerances and seamlessly integrates with standard motion planners. 
+            Our approach generates an anisotropic cost map that encodes directional push safety. We pair this map with a contact-aware A* planner to find stable contact-rich paths.
             We perform experiments using 20 simulation and 10 real-world scenes and assess using task success rate, object displacements, and feedback from human evaluators. 
-            Our results over 3620 simulation and 200 real-world trials suggest that IMPACT enables efficient contact-rich motion planning in cluttered settings while outperforming alternative methods and ablations.
+            Our results over 3200 simulation and 200 real-world trials suggest that IMPACT enables efficient contact-rich motion planning in cluttered settings while outperforming alternative methods and ablations.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -184,52 +205,48 @@
         <h2 class="title is-3">Method Overview</h2> 
 
         <div class="column has-text-centered">
-          <img src="./static/images/method_v07.jpg"
+          <img src="./static/images/method_v13.jpg"
             class="centered-method"
             alt="method">
         </div>
 
         <div class="content has-text-justified">
           <p>
-            Overview of <b>IMPACT</b>. There is a toy bear, a coffee cup and a tomato can on the table. 
-            The objective is to reach the tomato can. 
-            We use SAM2 to segment the image and label the objects using "1", "2", and "3" to assist GPT's visual reasoning. 
-            GPT also receives a language template prompt \( \ell \) with object information from SAM2. 
-            GPT produces <b><i>costs</i></b> for the three objects, which are projected into a voxel grid \( C \) indicating the cost for the robot end-effector to enter each voxel.
-            The costs are high for the coffee cup (GPT-assigned cost: 8) and the tabletop (a fixed cost of 10). 
-            We use a cost of -1 for the target object. 
-            Finally, an off-the-shelf motion planner (RRT*) uses this to guide the robot, which avoids the coffee cup but makes contact with the toy bear to successfully reach the tomato can. 
+            Overview of <b>IMPACT</b>. There is a toy bear, a coffee cup and a glue bottle (target) on the table. 
+            The VLM receives an annotated image \( I' \) and a language template prompt \( \ell \) with object information from SAM2, and outputs <i>costs</i> for the three objects.
+            We use a cost of \( -1 \) for the target object. We construct a 3D voxel grid \( V \) using these costs and then flatten it to produce an <i>anisotropic, contact-aware cost map</i> \( M' \). The contact-aware A* planner searches over three motion primitives in this map: <i>Move</i>, <i>Push</i> and <i>Rotate</i> to generate a trajectory. 
+            The planner's state space includes the robot's end-effector pose and the displaced positions of low-cost objects. 
+            These guide the robot to avoid the coffee cup but make contact with the toy bear at the appropriate direction to reach the glue bottle.
           </p>
         </div>
-        <!-- <br/> -->
-
+        
 
         <h3 class="title is-4">Cost Map Visualization</h3> 
-    
-        <!-- <p style="width: 80%; text-align: center; white-space: normal">
-          Under construction.
-        </p> -->
+
         <div class="columns">
-          <div class="column is-half has-text-centered">
+          <div class="column has-text-centered">
             <p style="text-align:center;">
-              <video id="interactive-video" width="100%" height="425" controls autoplay loop muted>
-                <source src="./static/videos/sim/scene102-cot-shelf2-center-rrt_star-200-10-03_video.mp4" type="video/mp4">
+              <video id="interactive-video" width="100%" height="325" controls autoplay loop muted>
+                <source src="./static/videos/sim/scene206-default-table_top-center-a_star-200-10-15_video.mp4" type="video/mp4">
               </video>
             </p>
           </div>
-          <div class="column has-text-centered">
-            <iframe id="interactive-html" src="./static/maps/scene102_costmap.html" width="100%" height="340" frameborder="0" style="margin: 0; padding: 0;"></iframe>
+          <div class="column has-text-centered"  style="margin-left:10px;">
+            <iframe id="interactive-html" src="./static/maps/scene206_costmap.html" width="100%" height="220" frameborder="0" style="margin: 0; padding: 0;"></iframe>
             <!-- <p style="text-align:center; margin-top: auto;"> -->
             <p style="text-align: center">
-              Interactive 3D Cost Map
+              Interactive 3D Map
             </p>
           </div>
-
+          <div class="column has-text-centered">
+            <img src="./static/images/scene206_push_safety_updated_grid_crop.png" width="220" height="auto" style="margin: 0; padding: 0;">
+            <p style="text-align: center">Anisotropic Cost Map</p>
+          </div>
         </div>
       </div>
     </div>
     <br/>
-      
+        
 
     <div class="columns is-centered">
       <div class="column is-full-width">
@@ -247,7 +264,7 @@
             <br/>    
 
             <p id="target-object-text-real">
-              The target object is <strong>the tomato can</strong>.
+              The target object is <strong>the glue bottle</strong>.
             </p>
           </div>
         </div>    
@@ -255,16 +272,54 @@
 
         <div class="columns is-centered">
           <div class="column is-6 has-text-centered">
-            <h3 class="title is-4">Baseline: LAPP</h3>
+            <h3 class="title is-5">Baseline: LAPP</h3>
             <video id="video-real-left" width="98%" controls muted autoplay loop>
-              <source src="./static/videos/real/scene1-lapp-8.mp4" type="video/mp4">
+              <source src="./static/videos/real/scene1-lapp.mp4" type="video/mp4">
             </video>
           </div>
     
           <div class="column is-6 has-text-centered">
-            <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
+            <h3 class="title is-5">Ours: IMPACT</h3>
             <video id="video-real-right" width="98%" controls muted autoplay loop>
-              <source src="./static/videos/real/scene1-ours-7.mp4" type="video/mp4">
+              <source src="./static/videos/real/scene1-ours-s-text.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <h3 class="title is-4">Zero-shot Generalization</h3>
+        <p>
+          IMPACT has strong zero-shot generalization capabilities, and can be applied to diverse scenarios without finetuing or sim-to-real transfer.
+        </p>
+
+        <br/>
+         <div class="columns is-centered is-vcentered">
+
+          <div class="scene-container">
+            <div class="dropdown-container">
+              <label><strong>Example</strong></label>
+              <select class="dropdown" id="example-select-real" onchange="updateExampleVideosReal()">
+              </select>
+            </div>
+
+            <p id="target-unseen-object-text-real">
+              The target object is <strong>the pickleball</strong>. <strong>The cup containing two markers</strong> is <i>unseen</i> to LAPP.
+            </p>
+          </div>
+        </div>    
+        <br/>    
+
+        <div class="columns is-centered">
+          <div class="column is-6 has-text-centered">
+            <h3 class="title is-5">Baseline: LAPP</h3>
+            <video id="video-example-real-left" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/real/scene4-lapp.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="column is-6 has-text-centered">
+            <h3 class="title is-5">Ours: IMPACT</h3>
+            <video id="video-example-real-right" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/real/scene4-ours-s-text.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -278,18 +333,26 @@
         <h2 class="title is-3">Simulation Results</h2> 
         <br/> 
 
+        <h3 class="title is-4">Q1: Does acceptable contact really make sense?</h3>
+
+        <p>
+          Results in simulation show that collision-free paths can still lead to unexpected collisions. 
+          By allowing acceptable contact, IMPACT generates safer and more reliable trajectories.
+        </p>
+        <br/>
+
         <div class="columns is-centered is-vcentered">
 
           <div class="scene-container">
             <div class="dropdown-container">
-              <label><strong>Scene</strong></label>
-              <select class="dropdown" id="scene-select-sim" onchange="updateVideosSim()">
+              <label><strong>Example</strong></label>
+              <select class="dropdown" id="scene-select-sim-cf" onchange="updateVideosSimCf()">
               </select>
             </div>
             <br/>    
             
-            <p id="target-object-text-sim">
-              The target object is <strong>the foam brick</strong>.
+            <p id="target-object-text-sim-cf">
+              The target object is <strong>the pudding box</strong>.
             </p>
           </div>
         </div>
@@ -297,33 +360,66 @@
 
         <div class="columns is-centered">
           <div class="column is-6 has-text-centered">
-            <div class="is-inline-flex" style="align-items: baseline;  gap: 2px;">
-              <!-- <h3 class="title is-4" style="margin: 0;">Baseline</h3>
-              <label class="title is-4" style="margin: 0;"><strong>:</strong></label> -->
-              <h3 class="title is-4" style="margin: 3; display: inline-block;">Baseline:</h3>
-              <select class="dropdown" id="method-select-sim" style="display: inline-block;" onchange="updateVideosSim()">
-              <!-- <select class="dropdown" id="method-select-sim" onchange="updateVideosSim()"> -->
-                <option value="impact-rrt">IMPACT+RRT</option>
-                <option value="impact-mpc">IMPACT+MPC</option>
-                <option value="collision_free-rrt_star">Collision-Free+RRT*</option>
-                <option value="collision_free-rrt">Collision-Free+RRT</option>
-                <option value="collision_free-mpc">Collision-Free+MPC</option>
-                <option value="lapp">LAPP</option>
-              </select>
-            </div>
+            <h3 class="title is-5">Baseline: Collision-Free + A*</h3>
 
-            <video id="video-sim-left" width="98%" controls muted autoplay loop>
-              <source src="./static/videos/sim/scene101-default-shelf2-center-rrt-200-10-02_video.mp4" type="video/mp4">
+            <video id="video-sim-cf-left" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/sim/scene207-collision_free-table_top-center-a_star-200-10-16_video.mp4" type="video/mp4">
             </video>
-            <p id="no-path-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
+            <p id="no-path-cf-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
           </div>
     
           <div class="column is-6 has-text-centered">
-            <h3 class="title is-4">Ours: IMPACT+RRT*</h3>
-            <video id="video-sim-right" width="98%" controls muted autoplay loop>
-              <source src="./static/videos/sim/scene101-default-shelf2-center-rrt_star-200-10-08_video.mp4" type="video/mp4">
+            <h3 class="title is-5">Ours: IMPACT</h3>
+            <video id="video-sim-cf-right" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/sim/scene207-default-table_top-center-a_star-200-10-08_video.mp4" type="video/mp4">
             </video>
-            <p id="no-path-right" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
+            <p id="no-path-cf-right" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
+          </div>
+        </div>
+
+
+        <h3 class="title is-4">Q2: Does directional push analysis really matter?</h3>
+
+        <p>
+          Without directional push analysis, obstacles may get pushed into the target. 
+          The anisotropic, contact-aware cost map guides pushes to be safer and more controlled.
+        </p>
+        <br/>
+
+        <div class="columns is-centered is-vcentered">
+
+          <div class="scene-container">
+            <div class="dropdown-container">
+              <label><strong>Example</strong></label>
+              <select class="dropdown" id="scene-select-sim-dir" onchange="updateVideosSimDir()">
+              </select>
+            </div>
+            <br/>    
+            
+            <p id="target-object-text-sim-dir">
+              The target object is <strong>the cup</strong>.
+            </p>
+          </div>
+        </div>
+        <br/>  
+
+        <div class="columns is-centered">
+          <div class="column is-6 has-text-centered">
+
+            <h3 class="title is-5">Baseline: VLM Cost + A* w/o direction</h3>
+
+            <video id="video-sim-dir-left" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/sim/scene203-default-table_top-center-a_star_plain-200-10-08_video.mp4" type="video/mp4">
+            </video>
+            <p id="no-path-dir-left" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
+          </div>
+    
+          <div class="column is-6 has-text-centered">
+            <h3 class="title is-5">Ours: IMPACT</h3>
+            <video id="video-sim-dir-right" width="98%" controls muted autoplay loop>
+              <source src="./static/videos/sim/scene203-default-table_top-center-a_star-200-10-03_video.mp4" type="video/mp4">
+            </video>
+            <p id="no-path-dir-right" style="display: none; color: rgb(0, 0, 0); font-weight: bold;">No path found.</p>
           </div>
         </div>
 
@@ -391,13 +487,40 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
     </script>
 
     <script>
-      let sceneDropdownSim = document.getElementById("scene-select-sim");
-      for (let i = 1; i <= 20; i++) {
+      let exampleDropdownReal = document.getElementById("example-select-real");
+      let example_real_video_list = [4, 8];
+      for (let j = 0; j < example_real_video_list.length; j++) {
+          let i = example_real_video_list[j];
           let option = document.createElement("option");
-          index = i.toString().padStart(2, "0");
-          option.value = `scene1${index}`; 
-          option.textContent = i.toString().padStart(2, "0"); 
-          sceneDropdownSim.appendChild(option);
+          option.value = `scene${i}`; // Value in the format "scene1", "scene2", etc.
+          option.textContent = (j+1).toString().padStart(2, "0"); // Display "01", "02", ..., "10"
+          exampleDropdownReal.appendChild(option);
+      }
+    </script>
+
+    <script>
+      let sceneDropdownSimCf = document.getElementById("scene-select-sim-cf");
+      let sim_cf_video_list = [207, 119, 111];
+      for (let j = 1; j <= sim_cf_video_list.length; j++) {
+          let i = sim_cf_video_list[j-1];
+          let option = document.createElement("option");
+          index = i.toString();
+          option.value = `scene${index}`; 
+          option.textContent = j.toString().padStart(2, "0"); 
+          sceneDropdownSimCf.appendChild(option);
+      }
+    </script>
+
+    <script>
+      let sceneDropdownSimDir = document.getElementById("scene-select-sim-dir");
+      let sim_dir_video_list = [203, 116, 308];
+      for (let j = 1; j <= sim_dir_video_list.length; j++) {
+          let i = sim_dir_video_list[j-1];
+          let option = document.createElement("option");
+          index = i.toString();
+          option.value = `scene${index}`; 
+          option.textContent = j.toString().padStart(2, "0"); 
+          sceneDropdownSimDir.appendChild(option);
       }
     </script>
 
@@ -435,9 +558,43 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
     </script>
 
     <script>
-      function updateVideosSim() {
-          let scene = document.getElementById("scene-select-sim").value;
-          let method = document.getElementById("method-select-sim").value;
+      function updateExampleVideosReal() {
+          let scene = document.getElementById("example-select-real").value;
+
+          Promise.all([
+              fetch('./static/target_objects.json').then(res => res.json()),
+              fetch('./static/unseen_objects.json').then(res => res.json())
+          ])
+            .then(([targetData, unseenData]) => {
+                let targetText = targetData[scene] || ""; 
+                let unseenText = unseenData[scene] || "";
+                document.getElementById("target-unseen-object-text-real").innerHTML = `The target object is <strong>the ${targetText}</strong>. <strong>The ${unseenText}</strong> is <i>unseen</i> to LAPP.`;
+            })
+            .catch(error => console.error("Error loading JSON files:", error));
+
+          fetch('./static/video_files.json')
+          .then(response => response.json())
+          .then(videoData => {
+              if (videoData[scene]) {
+                  let lappFilename = videoData[scene]["lapp"];
+                  let oursFilename = videoData[scene]["ours"];
+
+                  document.getElementById("video-example-real-left").src = `./static/videos/real/${lappFilename}`;
+                  document.getElementById("video-example-real-right").src = `./static/videos/real/${oursFilename}`;
+
+                  document.getElementById("video-example-real-left").load();
+                  document.getElementById("video-example-real-right").load();
+              } else {
+                  console.error("Scene not found in video JSON:", scene);
+              }
+          })
+          .catch(error => console.error("Error loading video filenames:", error));
+      }
+    </script>
+
+    <script>
+      function updateVideosSimCf() {
+          let scene = document.getElementById("scene-select-sim-cf").value;
 
           fetch('./static/target_objects.json')
             .then(response => response.json())
@@ -447,7 +604,7 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             console.log("Scene selected:", scene);
             console.log("Target object retrieved:", targetText);
 
-                document.getElementById("target-object-text-sim").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+                document.getElementById("target-object-text-sim-cf").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
             })
             .catch(error => console.error("Error loading target object JSON:", error));
 
@@ -455,27 +612,78 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
             .then(response => response.json())
             .then(videoData => {
                 if (videoData[scene]) {
-                    let baseFilename = videoData[scene]?.[method] || null;
-                    let oursFilename = videoData[scene]?.["impact-rrt_star"] || null;
+                    let baseFilename = videoData[scene]?.["collision_free"] || null;
+                    let oursFilename = videoData[scene]?.["ours"] || null;
 
                     if (baseFilename) {
-                      document.getElementById("video-sim-left").src = `./static/videos/sim/${baseFilename}`;
-                      document.getElementById("video-sim-left").load();
-                      document.getElementById("video-sim-left").style.display = "block";
-                      document.getElementById("no-path-left").style.display = "none";
+                      document.getElementById("video-sim-cf-left").src = `./static/videos/sim/${baseFilename}`;
+                      document.getElementById("video-sim-cf-left").load();
+                      document.getElementById("video-sim-cf-left").style.display = "block";
+                      document.getElementById("no-path-cf-left").style.display = "none";
                     } else {
-                      document.getElementById("video-sim-left").style.display = "none";
-                      document.getElementById("no-path-left").style.display = "block";
+                      document.getElementById("video-sim-cf-left").style.display = "none";
+                      document.getElementById("no-path-cf-left").style.display = "block";
                     }
 
                     if (oursFilename) {
-                      document.getElementById("video-sim-right").src = `./static/videos/sim/${oursFilename}`;
-                      document.getElementById("video-sim-right").load();
-                      document.getElementById("video-sim-right").style.display = "block";
-                      document.getElementById("no-path-right").style.display = "none";
+                      document.getElementById("video-sim-cf-right").src = `./static/videos/sim/${oursFilename}`;
+                      document.getElementById("video-sim-cf-right").load();
+                      document.getElementById("video-sim-cf-right").style.display = "block";
+                      document.getElementById("no-path-cf-right").style.display = "none";
                     } else {
-                      document.getElementById("video-sim-right").style.display = "none";
-                      document.getElementById("no-path-right").style.display = "block";
+                      document.getElementById("video-sim-cf-right").style.display = "none";
+                      document.getElementById("no-path-cf-right").style.display = "block";
+                    }
+
+                } else {
+                    console.error("No matching video found for:", scene, method);
+                }
+            })
+            .catch(error => console.error("Error loading video filenames:", error));
+      }
+    </script>
+
+    <script>
+      function updateVideosSimDir() {
+          let scene = document.getElementById("scene-select-sim-dir").value;
+
+          fetch('./static/target_objects.json')
+            .then(response => response.json())
+            .then(data => {
+                let targetText = data[scene] || ""; 
+
+            console.log("Scene selected:", scene);
+            console.log("Target object retrieved:", targetText);
+
+                document.getElementById("target-object-text-sim-dir").innerHTML = `The target object is <strong>the ${targetText}</strong>.`;
+            })
+            .catch(error => console.error("Error loading target object JSON:", error));
+
+          fetch('./static/video_files.json')
+            .then(response => response.json())
+            .then(videoData => {
+                if (videoData[scene]) {
+                    let baseFilename = videoData[scene]?.["no_direction"] || null;
+                    let oursFilename = videoData[scene]?.["ours"] || null;
+
+                    if (baseFilename) {
+                      document.getElementById("video-sim-dir-left").src = `./static/videos/sim/${baseFilename}`;
+                      document.getElementById("video-sim-dir-left").load();
+                      document.getElementById("video-sim-dir-left").style.display = "block";
+                      document.getElementById("no-path-dir-left").style.display = "none";
+                    } else {
+                      document.getElementById("video-sim-dir-left").style.display = "none";
+                      document.getElementById("no-path-dir-left").style.display = "block";
+                    }
+
+                    if (oursFilename) {
+                      document.getElementById("video-sim-dir-right").src = `./static/videos/sim/${oursFilename}`;
+                      document.getElementById("video-sim-dir-right").load();
+                      document.getElementById("video-sim-dir-right").style.display = "block";
+                      document.getElementById("no-path-dir-right").style.display = "none";
+                    } else {
+                      document.getElementById("video-sim-dir-right").style.display = "none";
+                      document.getElementById("no-path-dir-right").style.display = "block";
                     }
 
                 } else {
@@ -490,18 +698,19 @@ Your analysis should be comprehensive, considering the dynamic interactions betw
 </section>
 
 
+		
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
       @misc{ling2025impactintelligentmotionplanning,
-        title={IMPACT: Intelligent Motion Planning with Acceptable Contact Trajectories via Vision-Language Models}, 
+        title={IMPACT: Intelligent Motion Planning with Acceptable Contact Trajectories via Vision-Language Models},
         author={Yiyang Ling and Karan Owalekar and Oluwatobiloba Adesanya and Erdem Bıyık and Daniel Seita},
         year={2025},
         eprint={2503.10110},
         archivePrefix={arXiv},
         primaryClass={cs.RO},
-        url={https://arxiv.org/abs/2503.10110}, 
+        url={https://arxiv.org/abs/2503.10110},
       }
     </code></pre>
   </div>
